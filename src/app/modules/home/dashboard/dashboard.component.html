@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>FCM Notifications</h1>
+
+    <div class="list-group overflow-auto">
+        <a href="#" class="bg-transparent border-0 list-group-item list-group-item-action" *ngFor="let notification of notifications; let odd = odd"
+        [ngClass]="odd ? 'text-warning' : 'text-info'" (click)="navigateByType(notification)">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{notification.title}}</h5>
+                <small>3 days ago</small>
+            </div>
+            <p class="mb-1">{{notification.body}}</p>
+            <small>And some small print.</small>
+        </a>
+    </div>
+</div>
