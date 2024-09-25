@@ -9,6 +9,7 @@ import { environment } from "../../environments/environment";
 })
 export class MessagingService {
   public newNotification = signal<any>(null);
+  public token = signal<string>('No Token');
 
   constructor(
     private angularFireMessaging: AngularFireMessaging,
@@ -20,6 +21,7 @@ export class MessagingService {
       next: (token: string | null) => {
         if (token != null) {
           console.log(token);
+          this.token.set(token);
           // this._validateFCMToken(token!);
           this._receiveMessage();
         } else {

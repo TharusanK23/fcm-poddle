@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements OnInit {
 
   public notifications: any[] = [];
+  public token: string = '';
 
   constructor(
     private messagingService: MessagingService
@@ -27,6 +28,7 @@ export class DashboardComponent implements OnInit {
   private _getFCMNotification() {
     effect(() => {
       var newNotification = this.messagingService.newNotification();
+      this.token = this.messagingService.token();
       console.log(newNotification);
       if(newNotification !== null) {
         this.notifications.unshift(newNotification.notification);
