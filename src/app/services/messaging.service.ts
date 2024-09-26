@@ -14,7 +14,7 @@ export class MessagingService {
   constructor(
     private angularFireMessaging: AngularFireMessaging,
     private http: HttpClient
-  ) { }
+  ) {}
 
   public requestToken() {
     this.angularFireMessaging.requestToken.subscribe({

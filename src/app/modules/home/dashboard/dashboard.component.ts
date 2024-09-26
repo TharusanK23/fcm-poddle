@@ -29,8 +29,8 @@ export class DashboardComponent implements OnInit {
     effect(() => {
       var newNotification = this.messagingService.newNotification();
       this.token = this.messagingService.token();
-      console.log(newNotification);
       if(newNotification !== null) {
+        console.log(newNotification);
         this.notifications.unshift(newNotification.notification);
       }      
     });
